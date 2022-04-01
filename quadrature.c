@@ -3,14 +3,14 @@
 //#include "tinyexpr.h"
 
 double f(float x);
-double left_sum(float a, float b, int sub_intervals);
-double right_sum(float a, float b, int sub_intervals);
-double midpoint_sum(float a, float b, int sub_intervals);
-double trapezoidal_rule(float a, float b, int sub_intervals);
-double simpsons_rule(float a, float b, int sub_intervals);
-double simpsons_38rule(float a, float b, int sub_intervals);
-double booles_rule(float a, float b, int sub_intervals);
-double gaussian_quad(float a, float b, int sub_intervals);
+double left_sum(float, float, int);
+double right_sum(float, float, int);
+double midpoint_sum(float, float, int);
+double trapezoidal_rule(float, float, int);
+double simpsons_rule(float, float, int);
+double simpsons_38rule(float, float, int);
+double booles_rule(float, float, int);
+double gaussian_quad(float, float, int);
 
 //char exp_input[50];
 
