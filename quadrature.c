@@ -30,6 +30,9 @@ void main() {
     printf("right sum: %f\n", right_sum(a, b, n));
     printf("midpoint sum: %f\n", midpoint_sum(a, b, n));
     printf("trapezoidal sum: %f\n", trapezoidal_rule(a, b, n));
+    if(a == -1 && b == 1) {
+        printf("gaussian quadricature: %f\n", gaussian_quad(a, b, n));
+    }
 }
 
 double f(float x) {
@@ -79,4 +82,14 @@ double trapezoidal_rule(float a, float b, int sub_intervals) {
         last_height = right_height;
     }
     return dx*sum;
+}
+
+double gaussian_quad(float a, float b, int n) {
+    if(n > 4) n = 4;
+    if(a == -1 && b == 1) {
+        if(n == 2) return 1*f(-1/sqrt(3))+1*f(1/sqrt(3));
+        if(n == 3) return 5/9*f(-sqrt(3/5))+8/9*f(0)+5/9*f(sqrt(3/5));
+        if(n == 4) return 0.34785*f(-0.86114)+0.65215*f(-0.33998)+0.65215*f(0.33998)+0.34785*f(0.86114);
+    }
+    return 0;
 }
