@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "tinyexpr.h"
+//#include "tinyexpr.h"
 
 double f(float x);
 double left_sum(float a, float b, int sub_intervals);
