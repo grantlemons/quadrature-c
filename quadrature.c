@@ -39,7 +39,7 @@ double f(float x) {
     te_expr *expr = te_compile(exp_input, vars, 2, &err);
     return te_eval(expr);
     */
-   return 0.5*pow(x, 3) + 2*pow(x, 2);
+    return 0.5*pow(x, 3) + 2*pow(x, 2);
 }
 
 double left_sum(float a, float b, int sub_intervals) {
