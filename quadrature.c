@@ -30,7 +30,7 @@ void main() {
     printf("right sum: %f\n", right_sum(a, b, n));
     printf("midpoint sum: %f\n", midpoint_sum(a, b, n));
     printf("trapezoidal sum: %f\n", trapezoidal_rule(a, b, n));
-    printf("simpson\'s rule: %f\n", simpsons_rule(a, b, n));
+    //printf("simpson\'s rule: %f\n", simpsons_rule(a, b, n));
     if(a == -1 && b == 1) {
         printf("gaussian quadricature: %f\n", gaussian_quad(a, b, n));
     }
@@ -83,6 +83,7 @@ double trapezoidal_rule(float a, float b, int sub_intervals) {
     return dx*sum;
 }
 
+/*
 double simpsons_rule(float a, float b, int n) {
     double dx = (b-a)/n;
     long double sum;
@@ -93,7 +94,6 @@ double simpsons_rule(float a, float b, int n) {
     return dx/3 * sum;
 }
 
-/*
 double simpsons_38rule(float a, float b, int sub_intervals) {
     double dx = (b-a)/sub_intervals;
     double sum;
