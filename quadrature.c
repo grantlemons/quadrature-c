@@ -46,8 +46,8 @@ double f(float x) {
 }
 
 double left_sum(float a, float b, int sub_intervals) {
-    float dx = (b-a)/sub_intervals;
-    float sum;
+    double dx = (b-a)/sub_intervals;
+    double sum;
     for(int i=0; i<sub_intervals; i++) {
         sum += f(a+(dx*i));
     }
@@ -55,8 +55,8 @@ double left_sum(float a, float b, int sub_intervals) {
 }
 
 double right_sum(float a, float b, int sub_intervals) {
-    float dx = (b-a)/sub_intervals;
-    float sum;
+    double dx = (b-a)/sub_intervals;
+    double sum;
     for(int i=0; i<sub_intervals; i++) {
         sum += f(a+(dx*(i+1)));
     }
@@ -64,8 +64,8 @@ double right_sum(float a, float b, int sub_intervals) {
 }
 
 double midpoint_sum(float a, float b, int sub_intervals) {
-    float dx = (b-a)/sub_intervals;
-    float sum;
+    double dx = (b-a)/sub_intervals;
+    double sum;
     for(int i=0; i<sub_intervals; i++) {
         sum += f(a+(dx*i)+(dx/2));
     }
@@ -73,11 +73,11 @@ double midpoint_sum(float a, float b, int sub_intervals) {
 }
 
 double trapezoidal_rule(float a, float b, int sub_intervals) {
-    float dx = (b-a)/sub_intervals;
-    float last_height = f(a);
+    double dx = (b-a)/sub_intervals;
+    double last_height = f(a);
     double sum;
     for(int i=0; i<sub_intervals; i++) {
-        float right_height = f(a+(dx*(i+1)));
+        double right_height = f(a+(dx*(i+1)));
         sum += (last_height+right_height)/2;
         last_height = right_height;
     }
