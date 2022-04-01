@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-//#include "tinyexpr.h"
+#include "tinyexpr.h"
 
 double f(float x);
 double left_sum(float, float, int);
@@ -36,13 +36,11 @@ void main() {
 }
 
 double f(float x) {
-    /*
-    int err;
+    /*int err;
     te_variable vars[] = {{"x", &x}};
     te_expr *expr = te_compile(exp_input, vars, 2, &err);
-    return te_eval(expr);
-    */
-    return 0.5*pow(x, 3) + 2*pow(x, 2);
+    return te_eval(expr);*/
+    return 0.1*pow(x-4, 3) + pow(x-4, 2) - 1.5;
 }
 
 double left_sum(float a, float b, int sub_intervals) {
