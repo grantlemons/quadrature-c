@@ -8,7 +8,7 @@ double right_sum(float a, float b, int sub_intervals);
 double midpoint_sum(float a, float b, int sub_intervals);
 double trapezoidal_rule(float a, float b, int sub_intervals);
 
-char exp_input[50];
+//char exp_input[50];
 
 void main() {
     float a, b, n;
