@@ -46,7 +46,7 @@ double f(float x) {
 
 double left_sum(float a, float b, int sub_intervals) {
     double dx = (b-a)/sub_intervals;
-    double sum; // changing to long double breaks it
+    long double sum = 0; // changing to long double breaks it
     for(int i=0; i<sub_intervals; i++) {
         sum += f(a+(dx*i));
     }
@@ -55,7 +55,7 @@ double left_sum(float a, float b, int sub_intervals) {
 
 double right_sum(float a, float b, int sub_intervals) {
     double dx = (b-a)/sub_intervals;
-    double sum;
+    double sum = 0;
     for(int i=0; i<sub_intervals; i++) {
         sum += f(a+(dx*(i+1)));
     }
@@ -64,7 +64,7 @@ double right_sum(float a, float b, int sub_intervals) {
 
 double midpoint_sum(float a, float b, int sub_intervals) {
     double dx = (b-a)/sub_intervals;
-    double sum;
+    double sum = 0;
     for(int i=0; i<sub_intervals; i++) {
         sum += f(a+(dx*i)+(dx/2));
     }
@@ -74,7 +74,7 @@ double midpoint_sum(float a, float b, int sub_intervals) {
 double trapezoidal_rule(float a, float b, int sub_intervals) {
     double dx = (b-a)/sub_intervals;
     double last_height = f(a);
-    double sum;
+    double sum = 0;
     for(int i=0; i<sub_intervals; i++) {
         double right_height = f(a+(dx*(i+1)));
         sum += (last_height+right_height)/2;
@@ -83,20 +83,19 @@ double trapezoidal_rule(float a, float b, int sub_intervals) {
     return dx*sum;
 }
 
-/*
 double simpsons_rule(float a, float b, int n) {
     double dx = (b-a)/n;
-    long double sum;
+    long double sum = 0;
     for(int i=1; i < n/2; i++) {
         float j = a+(i*dx);
         sum += f(2*j-2)+4*f(2*j-1)+f(2*j);
     }
     return dx/3 * sum;
 }
-
+/*
 double simpsons_38rule(float a, float b, int sub_intervals) {
     double dx = (b-a)/sub_intervals;
-    double sum;
+    double sum = 0;
     for(int i=0; i < n-1; i++) {
         float j = a+(i*dx);
         sum += f(j)+2;
@@ -105,8 +104,9 @@ double simpsons_38rule(float a, float b, int sub_intervals) {
         float j = a+(i*dx);
         sum += ;
     }
-    return 3*dx/8 * (f(a)+sum);
-}*/
+    return (3*dx)/8 * (f(a)+sum);
+}
+*/
 
 double gaussian_quad(float a, float b, int n) {
     if(n > 4) n = 4;
