@@ -7,6 +7,10 @@ double left_sum(float a, float b, int sub_intervals);
 double right_sum(float a, float b, int sub_intervals);
 double midpoint_sum(float a, float b, int sub_intervals);
 double trapezoidal_rule(float a, float b, int sub_intervals);
+double simpsons_rule(float a, float b, int sub_intervals);
+double simpsons_38rule(float a, float b, int sub_intervals);
+double booles_rule(float a, float b, int sub_intervals);
+double gaussian_quad(float a, float b, int sub_intervals);
 
 //char exp_input[50];
 
