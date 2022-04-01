@@ -46,7 +46,7 @@ double f(float x) {
 
 double left_sum(float a, float b, int sub_intervals) {
     double dx = (b-a)/sub_intervals;
-    long double sum;
+    double sum; // changing to long double breaks it
     for(int i=0; i<sub_intervals; i++) {
         sum += f(a+(dx*i));
     }
