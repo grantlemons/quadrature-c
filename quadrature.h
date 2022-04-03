@@ -1,4 +1,4 @@
-double f(float x);
+double f(double x);
 double left_sum(float, float, int);
 double right_sum(float, float, int);
 double midpoint_sum(float, float, int);

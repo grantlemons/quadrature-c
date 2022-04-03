@@ -3,13 +3,14 @@
 #include "tinyexpr.h"
 #include "quadrature.h"
 
-//char exp_input[50];
+char exp_input[50];
 
 void main() {
     float a, b, n;
 
-    //printf("f(x) = ");
-    //scanf("%s", &exp_input);
+    printf("f(x) = ");
+    scanf("%s", &exp_input);
+    
     printf("left bound: ");
     scanf("%f", &a);
     printf("right bound: ");
@@ -27,12 +28,11 @@ void main() {
     }
 }
 
-double f(float x) {
-    /*int err;
+double f(double x) {
+    int err;
     te_variable vars[] = {{"x", &x}};
     te_expr *expr = te_compile(exp_input, vars, 2, &err);
-    return te_eval(expr);*/
-    return 0.1*pow(x-4, 3) + pow(x-4, 2) - 1.5;
+    return te_eval(expr);
 }
 
 double left_sum(float a, float b, int sub_intervals) {
