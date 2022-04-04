@@ -30,9 +30,11 @@ void main() {
 
 double f(double x) {
     int err;
-    te_variable vars[] = {{"x", &x}};
+    te_variable vars[] = {{"x", &x}}; // in order to work x must be a double
     te_expr *expr = te_compile(exp_input, vars, 2, &err);
-    return te_eval(expr);
+    double output = te_eval(expr);
+    te_free(eval);
+    return output;
 }
 
 double left_sum(float a, float b, int sub_intervals) {
@@ -98,7 +100,6 @@ double simpsons_38rule(float a, float b, int sub_intervals) {
     return (3*dx)/8 * (f(a)+sum);
 }
 */
-
 double gaussian_quad(float a, float b, int n) {
     if(n > 4) n = 4;
     if(a == -1 && b == 1) {
