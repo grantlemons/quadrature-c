@@ -33,7 +33,7 @@ double f(double x) {
     te_variable vars[] = {{"x", &x}}; // in order to work x must be a double
     te_expr *expr = te_compile(exp_input, vars, 2, &err);
     double output = te_eval(expr);
-    te_free(eval);
+    te_free(expr);
     return output;
 }
 
