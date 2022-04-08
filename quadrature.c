@@ -31,7 +31,7 @@ void main() {
 double f(double x) {
     int err;
     te_variable vars[] = {{"x", &x}}; // in order to work x must be a double
-    te_expr *expr = te_compile(exp_input, vars, 2, &err);
+    te_expr *expr = te_compile(exp_input, vars, 1, &err);
     double output = te_eval(expr);
     te_free(expr);
     return output;
